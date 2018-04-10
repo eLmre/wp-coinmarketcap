@@ -1,0 +1,252 @@
+[
+    {
+        "key": "group_5abbacbbf3b90",
+        "title": "Cryptocurrency Options",
+        "fields": [
+            {
+                "key": "field_5abbad00a8ad5",
+                "label": "Archive Slug",
+                "name": "coin_has_archive",
+                "type": "text",
+                "instructions": "\"has_archive\" parameter in post type registration",
+                "required": 0,
+                "conditional_logic": 0,
+                "wrapper": {
+                    "width": "25",
+                    "class": "",
+                    "id": ""
+                },
+                "default_value": "",
+                "placeholder": "",
+                "prepend": "",
+                "append": "",
+                "maxlength": ""
+            },
+            {
+                "key": "field_5abe24e24cb3b",
+                "label": "Cron Schedules",
+                "name": "coin_cron_time",
+                "type": "select",
+                "instructions": "How often the event should reoccur.",
+                "required": 0,
+                "conditional_logic": 0,
+                "wrapper": {
+                    "width": "25",
+                    "class": "",
+                    "id": ""
+                },
+                "choices": {
+                    "every_five_minutes": "every_five_minutes",
+                    "every_ten_minutes": "every_ten_minutes",
+                    "hourly": "hourly",
+                    "twicedaily": "twicedaily",
+                    "daily": "daily"
+                },
+                "default_value": [],
+                "allow_null": 0,
+                "multiple": 0,
+                "ui": 0,
+                "ajax": 0,
+                "return_format": "value",
+                "placeholder": ""
+            },
+            {
+                "key": "field_5abe25804cb3c",
+                "label": "Convert",
+                "name": "coin_convert",
+                "type": "select",
+                "instructions": "Convert prices in terms of another currency.",
+                "required": 0,
+                "conditional_logic": 0,
+                "wrapper": {
+                    "width": "25",
+                    "class": "",
+                    "id": ""
+                },
+                "choices": {
+                    "AUD": "AUD",
+                    "BRL": "BRL",
+                    "CAD": "CAD",
+                    "CHF": "CHF",
+                    "CLP": "CLP",
+                    "CNY": "CNY",
+                    "CZK": "CZK",
+                    "DKK": "DKK",
+                    "EUR": "EUR",
+                    "GBP": "GBP",
+                    "HKD": "HKD",
+                    "HUF": "HUF",
+                    "IDR": "IDR",
+                    "ILS": "ILS",
+                    "INR": "INR",
+                    "JPY": "JPY",
+                    "KRW": "KRW",
+                    "MXN": "MXN",
+                    "MYR": "MYR",
+                    "NOK": "NOK",
+                    "NZD": "NZD",
+                    "PHP": "PHP",
+                    "PKR": "PKR",
+                    "PLN": "PLN",
+                    "RUB": "RUB",
+                    "SEK": "SEK",
+                    "SGD": "SGD",
+                    "THB": "THB",
+                    "TRY": "TRY",
+                    "TWD": "TWD",
+                    "ZAR": "ZAR"
+                },
+                "default_value": [],
+                "allow_null": 1,
+                "multiple": 0,
+                "ui": 0,
+                "ajax": 0,
+                "return_format": "value",
+                "placeholder": ""
+            },
+            {
+                "key": "field_5abbad25a8ad6",
+                "label": "Coins Per Page",
+                "name": "coin_per_page",
+                "type": "text",
+                "instructions": "number of post to show per page",
+                "required": 0,
+                "conditional_logic": 0,
+                "wrapper": {
+                    "width": "25",
+                    "class": "",
+                    "id": ""
+                },
+                "default_value": "",
+                "placeholder": "",
+                "prepend": "",
+                "append": "",
+                "maxlength": ""
+            },
+            {
+                "key": "field_5abca4f0186f2",
+                "label": "Order Parameter",
+                "name": "coin_meta_key",
+                "type": "select",
+                "instructions": "\"meta_key\" parameter for \"pre_get_posts\" filter",
+                "required": 0,
+                "conditional_logic": 0,
+                "wrapper": {
+                    "width": "25",
+                    "class": "",
+                    "id": ""
+                },
+                "choices": {
+                    "coin_id": "coin_id",
+                    "coin_name": "coin_name",
+                    "coin_symbol": "coin_symbol",
+                    "coin_rank": "coin_rank",
+                    "coin_price_usd": "coin_price_usd",
+                    "coin_price_btc": "coin_price_btc",
+                    "coin_24h_volume_usd": "coin_24h_volume_usd",
+                    "coin_market_cap_usd": "coin_market_cap_usd",
+                    "coin_available_supply": "coin_available_supply",
+                    "coin_total_supply": "coin_total_supply",
+                    "coin_max_supply": "coin_max_supply",
+                    "coin_percent_change_1h": "coin_percent_change_1h",
+                    "coin_percent_change_24h": "coin_percent_change_24h",
+                    "coin_percent_change_7d": "coin_percent_change_7d",
+                    "coin_last_updated": "coin_last_updated",
+                    "coin_price_rub": "coin_price_rub",
+                    "coin_24h_volume_rub": "coin_24h_volume_rub",
+                    "coin_market_cap_rub": "coin_market_cap_rub"
+                },
+                "default_value": [],
+                "allow_null": 1,
+                "multiple": 0,
+                "ui": 1,
+                "ajax": 1,
+                "return_format": "value",
+                "placeholder": ""
+            },
+            {
+                "key": "field_5abca59b186f3",
+                "label": "Order by",
+                "name": "coin_orderby",
+                "type": "select",
+                "instructions": "Fields for which you can sort posts.",
+                "required": 0,
+                "conditional_logic": 0,
+                "wrapper": {
+                    "width": "25",
+                    "class": "",
+                    "id": ""
+                },
+                "choices": {
+                    "none": "none",
+                    "ID": "ID",
+                    "author": "author",
+                    "title": "title",
+                    "name": "name",
+                    "date": "date",
+                    "modified": "modified",
+                    "type": "type",
+                    "parent": "parent",
+                    "rand": "rand",
+                    "comment_count": "comment_count",
+                    "menu_order": "menu_order",
+                    "meta_value": "meta_value",
+                    "meta_value_num": "meta_value_num"
+                },
+                "default_value": [
+                    "meta_value"
+                ],
+                "allow_null": 0,
+                "multiple": 0,
+                "ui": 0,
+                "ajax": 0,
+                "return_format": "value",
+                "placeholder": ""
+            },
+            {
+                "key": "field_5abca712186f4",
+                "label": "Sorting Direction",
+                "name": "coin_order",
+                "type": "select",
+                "instructions": "The 'orderby' parameter.",
+                "required": 0,
+                "conditional_logic": 0,
+                "wrapper": {
+                    "width": "25",
+                    "class": "",
+                    "id": ""
+                },
+                "choices": {
+                    "ASC": "ASC",
+                    "DESC": "DESC"
+                },
+                "default_value": [
+                    "ASC"
+                ],
+                "allow_null": 0,
+                "multiple": 0,
+                "ui": 0,
+                "ajax": 0,
+                "return_format": "value",
+                "placeholder": ""
+            }
+        ],
+        "location": [
+            [
+                {
+                    "param": "options_page",
+                    "operator": "==",
+                    "value": "acf-options-options"
+                }
+            ]
+        ],
+        "menu_order": 0,
+        "position": "normal",
+        "style": "default",
+        "label_placement": "top",
+        "instruction_placement": "label",
+        "hide_on_screen": "",
+        "active": 1,
+        "description": ""
+    }
+]
