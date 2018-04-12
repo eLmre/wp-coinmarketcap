@@ -19,5 +19,5 @@ Check the cron task list. theme_activate hook creates a task at the moment of ac
 ### Usage
 ```sh
 get_option('coin_meta_keys'); // Return list of available meta-keys
-get_option('coin_meta_keys'); // Global JSON Data
+get_option('coin_global'); // Global JSON Data
 ```
