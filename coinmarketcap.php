@@ -2,9 +2,11 @@
 class Coinmarketcap {
     var $global;
     var $quick_search;
+    private $stored_coins;
     public function __construct() {
         $this->quick_search = $this->getQuickSearch();
         $this->global = $this->getGlobal();
+        $this->stored_coins = $this->getAllCoins();
     }
     public function ticker() {
         $convert = '&convert=' . get_field('coin_convert', 'coin_options');
@@ -22,7 +24,7 @@ class Coinmarketcap {
         $this->updateOptions($data[0]);
         foreach ($data as $coin) {
             $post = $this->findPost($meta_key = 'coin_id', $meta_value = $coin->id);
-            if (empty($post)) {
+            if (!$post) {
                 $this->createPost($coin);
             } else {
                 $this->updatePostMeta($post, $coin);
@@ -38,13 +40,12 @@ class Coinmarketcap {
         return wp_remote_retrieve_body($response);
     }
     private function findPost($meta_key, $meta_value) {
-        $args = array('meta_key' => $meta_key, 'meta_value' => $meta_value, 'post_type' => 'coin', 'post_status' => 'any', 'numberposts' => 1, 'fields' => 'ids');
-        $post = get_posts($args);
-        if (!empty($post)) {
-            return $post[0];
-        } else {
-            return false;
+        foreach ($this->stored_coins as $k => $val) {
+            if($val->$meta_key == $meta_value) {
+                return $this->stored_coins[$k]->ID;
+            }
         }
+        return false;
     }
     private function updatePostMeta($post_id, $coin) {
         $array = get_object_vars($coin);
@@ -101,5 +102,15 @@ class Coinmarketcap {
         $prefixed_properties = preg_filter('/^/', 'coin_', $properties);
         update_option('coin_meta_keys', $prefixed_properties);
         update_option('coin_global', $this->getGlobal());
+    }
+    private function getAllCoins() {
+        global $wpdb;
+        $coin_db_result = $wpdb->get_results("
+            SELECT p.*, t.meta_value as coin_id
+            FROM {$wpdb->posts} AS p
+            LEFT JOIN {$wpdb->base_prefix}postmeta t ON t.post_id = p.ID and t.meta_key='coin_id'
+            WHERE p.post_type = 'coin'
+        ");
+        return $coin_db_result;
     }
 }
